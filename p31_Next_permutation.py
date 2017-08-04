@@ -57,3 +57,9 @@ class Solution(object):
         for k in range(len(listNeedSort)):
             nums[i + 1 + k] = listNeedSort[k]
         return
+
+    if __name__ == "__main__":
+        solution = Solution()
+        testList = [1, 3, 2]
+        solution.nextPermutation(testList)
+        print(testList)
