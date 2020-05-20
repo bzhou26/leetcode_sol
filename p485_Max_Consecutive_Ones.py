@@ -10,5 +10,6 @@ class Solution(object):
            if i == 1: 
                sub += 1
                max_sub = max(sub, max_sub)
-           else: sub = 0
+           else:
+               sub = 0
         return max_sub
