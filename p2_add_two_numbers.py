@@ -12,7 +12,7 @@ Output: 7 -> 0 -> 8
 #         self.val = x
 #         self.next = None
 
-class Solution(object):
+class Solution1(object):
     def addTwoNumbers(self, l1, l2):
         """
         :type l1: ListNode
@@ -42,4 +42,31 @@ class Solution(object):
             if current2 != None:
                 current2 = current2.next
         return result.next
-            
+
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+        carry = 0
+        result = ListNode(0)
+        twoSum = result
+        while l1 or l2 or carry:
+            twoSum.next = ListNode(0)
+            twoSum = twoSum.next
+            val1 = 0
+            val2 = 0
+            if l1:
+                val1 = l1.val
+                l1 = l1.next
+            if l2:
+                val2 = l2.val
+                l2 = l2.next
+            twoSum.val = (val1 + val2 + carry) % 10
+            carry = (val1 + val2 + carry) // 10
+
+
+        return result.next
