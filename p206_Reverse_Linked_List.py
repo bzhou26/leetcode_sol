@@ -17,14 +17,13 @@ A linked list can be reversed either iteratively or recursively. Could you imple
 
 - Solution Summary:
 
+None Recursive Solution
+
 - Used Resources:
 
 --- Bo Zhou
 '''
 
-'''
-None Recursive Solution
-'''
 
 # Definition for singly-linked list.
 # class ListNode:
