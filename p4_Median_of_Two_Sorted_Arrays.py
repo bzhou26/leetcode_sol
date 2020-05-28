@@ -1,4 +1,4 @@
-/**
+'''
  - Leetcode problem: 70
 
  - Difficulty: Easy
@@ -36,20 +36,15 @@
  - Used Resources:
 
  --- Bo Zhou
- */
+'''
 
 
-class Solution {
-    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        List<Integer> sortedNumber = new ArrayList;
-        int i = 0;
-        int j = 0;
-        while (i < nums1.length || j < nums2.length) {
-            if (i < nums1.length && j < nums2.length){
-                sortedNumber
-            }
-        }
-
-        return result[n];
-    }
-}
+class Solution:
+    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        numAll = nums1 + nums2
+        numAll.sort()
+        l = len(numAll)
+        if l % 2 != 0:
+            return numAll[l // 2] * 1.0
+        else:
+            return (numAll[l // 2] + numAll[l // 2 - 1]) / 2.0
