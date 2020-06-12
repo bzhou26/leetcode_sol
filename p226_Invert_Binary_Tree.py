@@ -51,7 +51,7 @@ class Solution:
         while dq:
             n = len(dq)
             for i in range(n):
-                node = dq.pop()
+                node = dq.popleft()
                 node.left, node.right = node.right, node.left
                 if node.left:
                     dq.append(node.left)
