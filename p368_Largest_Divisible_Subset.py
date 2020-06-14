@@ -1,7 +1,7 @@
 '''
-- Leetcode problem: 1304
+- Leetcode problem: 368
 
-- Difficulty: Easy
+- Difficulty: Medium
 
 - Brief problem description:
 
