@@ -51,7 +51,6 @@ class Solution:
             s = stack.pop(0)
             greaterMap[s] = -1
 
-        print(greaterMap)
         result = []
         for num in nums1:
             result.append(greaterMap[num])
