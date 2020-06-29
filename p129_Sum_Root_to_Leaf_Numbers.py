@@ -67,7 +67,6 @@ class Solution:
                 dfs(root.left, combined)
             if root.right:
                 dfs(root.right, combined)
-
         if root is not None:
             dfs(root, '')
 
