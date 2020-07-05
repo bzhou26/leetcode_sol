@@ -27,3 +27,15 @@ class Solution2(object):
             y = y >> 1
 
         return result
+
+
+class Solution3:
+    def hammingDistance(self, x: int, y: int) -> int:
+        num = x ^ y
+        distance = 0
+        while num:
+            if num & 1:
+                distance += 1
+            num >>= 1
+
+        return distance
