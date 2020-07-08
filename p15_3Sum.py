@@ -33,30 +33,19 @@ Use dict to generate a 2 sum map, be careful for duplication result
 
 
 class Solution:
-    def threeSum(self, nums):
-        sumDict = dict()
-        result = []
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        nums.sort()
+        result = set()
         for i in range(len(nums) - 1):
-            for j in range(i+1, len(nums)):
-                sumValue = -(nums[i]+nums[j])
-                sumResult = sumDict.get(sumValue)
-                if not sumResult:
-                    sumDict[sumValue] = [[i, j]]
-                else:
-                    sumResult.append([i, j])
-                    sumDict[sumValue] = sumResult
-        for k in range(len(nums)):
-            sumList = sumDict.get(nums[k])
-            if sumList:
-                for l in sumList:
-                    if k not in l:
-                        picked = l[:]
-                        picked.append(k)
-                        oneSolution = [nums[picked[0]], nums[picked[1]], nums[picked[2]]]
-                        exist = False
-                        for e in result:
-                            if set(e) == set(oneSolution):
-                                exist = True
-                        if not exist:
-                            result.append(sorted(oneSolution))
+            index = len(nums) - 1
+            for j in range(i + 1, index):
+                a = nums[i]
+                b = nums[j]
+                c = 0 - a - b
+                if c < b:
+                    break
+                while nums[index] > c and index > j:
+                    index -= 1
+                if nums[index] == c and index > j:
+                    result.add((a, b, c))
         return list(result)
