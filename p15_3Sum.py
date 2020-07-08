@@ -41,6 +41,8 @@ class Solution:
             for j in range(i + 1, index):
                 a = nums[i]
                 b = nums[j]
+                if a == 0 and b == 0 and (0,0,0) in result:
+                    break
                 c = 0 - a - b
                 if c < b:
                     break
